@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Trader Details</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Name:</dt>
+        <dd>@Model.Name</dd>
+        <dt>Email:</dt>
+        <dd>@Model.Email</dd>
+        <!-- Add other properties here as needed -->
+    </dl>
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
